@@ -26,7 +26,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='../Kapture 2024-09-23 at 23.42.53.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='[../Kapture 2024-09-23 at 23.42.53.gif](https://github.com/kellyy8/webdev102-lab1/blob/main/Kapture%202024-09-23%20at%2023.42.53.gif)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
