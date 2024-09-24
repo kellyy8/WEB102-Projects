@@ -33,7 +33,7 @@ GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Getting the card to be responsive when the image sizes and description lengths varied.
 
 ## License
 
