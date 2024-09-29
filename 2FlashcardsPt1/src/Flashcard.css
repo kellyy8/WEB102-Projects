@@ -1,0 +1,22 @@
+.wrapper{
+    height: 400px;
+    width: 800px;
+    margin: 20px;
+    background-color: lavender;
+
+    /* TODO: Is there a way to center the text without using flexbox? */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover{
+        cursor: pointer;
+        /** TODO: Create a gradient. Box-shadow? */
+    }
+}
+
+p.content {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
