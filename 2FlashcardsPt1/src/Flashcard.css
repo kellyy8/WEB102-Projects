@@ -15,6 +15,13 @@
         cursor: pointer;
         /** TODO: Create a gradient. Box-shadow? */
     }
+
+    &:active {
+        transform: rotateX(180deg);
+    }
+
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 
 p.content {

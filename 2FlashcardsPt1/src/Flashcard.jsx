@@ -1,11 +1,10 @@
 import {useState} from 'react'
 import './Flashcard.css'
 
-const Flashcard = (props) => {
+const Flashcard = ({category, q, a, src}) => {
     const [showAnswer, setShowAnswer] = useState(false)
 
     const flipCard = () => {
-        /** TODO: Animate the card to flip 180º. */
         setShowAnswer(!showAnswer)
     }
 
@@ -13,12 +12,16 @@ const Flashcard = (props) => {
         <div
             className="cardWrapper"
             onClick={flipCard}
-            style={{backgroundColor: (props.category === "PBS KIDS") ? "lavender" : "lightskyblue"}}
+            style={{backgroundColor: (category === "PBS KIDS") ? "lavender" : "lightskyblue"}}
         >
-            <p className="content">{showAnswer ? props.a : props.q}</p>
-            {showAnswer &&
-                <div className="imgWrapper">
-                    <img src={props.src} height="100%" min-width="100%"/>
+            {!showAnswer ? 
+                <p className="content">{q}</p>
+                :
+                <div>
+                    <p className="content">{a}</p>
+                    <div className="imgWrapper">
+                        <img src={src} height="100%" min-width="100%"/>
+                    </div>
                 </div>
             }
         </div>
