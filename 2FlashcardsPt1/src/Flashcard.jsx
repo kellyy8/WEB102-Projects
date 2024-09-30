@@ -10,7 +10,11 @@ const Flashcard = (props) => {
     }
 
     return(
-        <div className="cardWrapper" onClick={flipCard}>
+        <div
+            className="cardWrapper"
+            onClick={flipCard}
+            style={{backgroundColor: (props.category === "PBS KIDS") ? "lavender" : "lightskyblue"}}
+        >
             <p className="content">{showAnswer ? props.a : props.q}</p>
             {showAnswer &&
                 <div className="imgWrapper">

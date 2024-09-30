@@ -139,6 +139,7 @@ const App = () => {
         q={question}
         a={cardPairs[question].answer}
         src={cardPairs[question].src}
+        category={cardPairs[question].category}
       />
       <button className="next" onClick={setNextQuestionAndIndex}>Next</button>
     </div>

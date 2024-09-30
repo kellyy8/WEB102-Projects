@@ -3,7 +3,7 @@
     width: 800px;
     margin: 20px;
     padding: 24px;
-    background-color: lavender;
+    background-color: lightpink;  /* Default fallback. */
 
     /* TODO: Is there a way to center the text without using flexbox? */
     display: flex;
