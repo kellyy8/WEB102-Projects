@@ -2,7 +2,7 @@
 
 Submitted by: **Kelly Yu**
 
-This web app: **contains 22 flashcards that match a kids' show's description to its name.**
+This web app: **contains 22 flashcards that match the descriptions of kids' shows to their names.**
 
 Time spent: **6** hours spent in total
 
