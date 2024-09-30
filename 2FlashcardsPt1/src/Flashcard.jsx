@@ -10,8 +10,13 @@ const Flashcard = (props) => {
     }
 
     return(
-        <div className="wrapper" onClick={flipCard}>
+        <div className="cardWrapper" onClick={flipCard}>
             <p className="content">{showAnswer ? props.a : props.q}</p>
+            {showAnswer &&
+                <div className="imgWrapper">
+                    <img src={props.src} height="100%" min-width="100%"/>
+                </div>
+            }
         </div>
     )
 }
