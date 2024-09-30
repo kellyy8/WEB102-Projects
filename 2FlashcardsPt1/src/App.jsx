@@ -34,8 +34,8 @@ const App = () => {
   return (
     <div>
       <div>
-        <h1>Guess That PBS KIDS Show!</h1>
-        <p>Use the hint on each card to guess the corresponding PBS KIDS show.</p>
+        <h1>Throwback to Childhood Days!</h1>
+        <p>How well do you remember your childhood shows? Guess the corresponding PBS KIDS series!</p>
         <p>Number of cards: {numCards}</p>
       </div>
       <Flashcard key={questionIndex} q={question} a={cardPairs[question]}/>
