@@ -2,6 +2,7 @@
     height: 400px;
     width: 800px;
     margin: 20px;
+    padding: 24px;
     background-color: lavender;
 
     /* TODO: Is there a way to center the text without using flexbox? */
@@ -16,7 +17,7 @@
 }
 
 p.content {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: bold;
     color: black;
 }
