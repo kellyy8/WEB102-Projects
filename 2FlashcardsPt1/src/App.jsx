@@ -24,10 +24,11 @@ const App = () => {
   const numCards = allQuestions.length
 
   const [question, setQuestion] = useState(allQuestions[0])
+  const [questionIndex, setQuestionIndex] = useState(0)
 
-  const setNextQuestion = () => {  // TODO: Make sure that next card shows question first, even if prev card last showed its answer.
-    const index = Math.floor(Math.random() * numCards)  // Expected output: 0, ..., numPairs-1
-    setQuestion(allQuestions[index])
+  const setNextQuestionAndIndex = () => {
+    setQuestionIndex(Math.floor(Math.random() * numCards))  // Expected output: 0, ..., numPairs-1
+    setQuestion(allQuestions[questionIndex])
   }
 
   return (
@@ -37,8 +38,8 @@ const App = () => {
         <p>Use the hint on each card to guess the corresponding PBS KIDS show.</p>
         <p>Number of cards: {numCards}</p>
       </div>
-      <Flashcard q={question} a={cardPairs[question]}/>
-      <button onClick={setNextQuestion}>Next</button>
+      <Flashcard key={questionIndex} q={question} a={cardPairs[question]}/>
+      <button onClick={setNextQuestionAndIndex}>Next</button>
     </div>
   )
 }
