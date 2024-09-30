@@ -116,15 +116,15 @@ const App = () => {
     },
   }
   
-  const allQuestions = Object.keys(cardPairs)
-  const numCards = allQuestions.length
+  const allPrompts = Object.keys(cardPairs)
+  const numCards = allPrompts.length
 
-  const [question, setQuestion] = useState(allQuestions[0])
-  const [questionIndex, setQuestionIndex] = useState(0)
+  const [prompt, setPrompt] = useState(allPrompts[0])
+  const [promptIndex, setPromptIndex] = useState(0)
 
-  const setNextQuestionAndIndex = () => {
-    setQuestionIndex(Math.floor(Math.random() * numCards))  // Expected output: 0, ..., numPairs-1
-    setQuestion(allQuestions[questionIndex])
+  const setNextPromptAndIndex = () => {
+    setPromptIndex(Math.floor(Math.random() * numCards))  // Expected output: 0, ..., numPairs-1
+    setPrompt(allPrompts[promptIndex])
   }
 
   return (
@@ -135,13 +135,13 @@ const App = () => {
         <p className="info">Number of cards: {numCards}</p>
       </div>
       <Flashcard
-        key={questionIndex}
-        q={question}
-        a={cardPairs[question].answer}
-        src={cardPairs[question].src}
-        category={cardPairs[question].category}
+        key={promptIndex}
+        prompt={prompt}
+        answer={cardPairs[prompt].answer}
+        src={cardPairs[prompt].src}
+        category={cardPairs[prompt].category}
       />
-      <button className="next" onClick={setNextQuestionAndIndex}>Next</button>
+      <button className="next" onClick={setNextPromptAndIndex}>Next</button>
     </div>
   )
 }
