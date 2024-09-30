@@ -4,3 +4,7 @@
   padding: 2rem;
   text-align: center;
 }
+
+button.next {
+  border: 1px solid white;
+}
