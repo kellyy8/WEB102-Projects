@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+p.info {
+  font-size: 16px;
+}
+
 button.next {
+  font-size: 16px;
+  font-weight: bold;
   border: 1px solid white;
 }

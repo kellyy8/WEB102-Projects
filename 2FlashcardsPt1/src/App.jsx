@@ -131,8 +131,8 @@ const App = () => {
     <div>
       <div>
         <h1>Throwback to Childhood Days!</h1>
-        <p>How well do you remember your childhood shows? Guess the corresponding PBS KIDS series!</p>
-        <p>Number of cards: {numCards}</p>
+        <p className="info">How well do you remember your childhood shows? Guess the corresponding series from different channels!</p>
+        <p className="info">Number of cards: {numCards}</p>
       </div>
       <Flashcard
         key={questionIndex}
