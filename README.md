@@ -39,7 +39,7 @@ GIF created with [Kap](https://getkap.co/) for macOS.
 
 Describe any challenges encountered while building the app.
 * Deciding on which properties to use and what values to assign to them to create a shadow around the card when the user hovers over it, and to animate the card so it seems like it flips when the user clicks on it. Learned how to use `box-shadow`, `transition`, and `transform` CSS properties.
-* Getting the card to reset its states, particularly its `showAnswer` state to `false`, whenever a new card is shown. Updated the `key` prop for the Flashcard component to achieve this.
+* Getting the card to reset its states, particularly its `showAnswer` state to `false`, whenever a new card is shown so that even if the previously shown card was showing the answer, the new card would always show the prompt first. Updated the `key` prop for the Flashcard component to achieve this.
 * Figuring out how to organize the information, particularly whether to define the list of cards inside the `App` component or the  `Flashcard` component. Ended up choosing the `App` component because I needed the cards information to display on the homepage the total number of cards and a next button that changes the card's content (prompt and answer). I passed the displayed card's information to the card via props.
 
 ## License
