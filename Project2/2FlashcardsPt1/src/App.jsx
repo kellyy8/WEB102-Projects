@@ -126,6 +126,21 @@ const App = () => {
     setCardPair(cardPairs[cardPairIndex])
   }
 
+  // Set sequence: Initialized to go through cards in order. Can be updated when cards are shuffled.
+  const [cardSequence, setCardSequence] = useState(
+    Array.from({length: numCards}, (_, i) => i)
+  )
+
+  const shuffleCards = () => {
+    // Fisher-Yates Shuffle: Swap N cards at random indices for N times.
+    let newCardSequence = [...cardSequence]
+    for(let i=numCards-1; i>0; i--){
+      const j = Math.floor(Math.random() * (i+1));
+      [newCardSequence[i], newCardSequence[j]] = [newCardSequence[j], newCardSequence[i]]
+    }
+    setCardSequence(newCardSequence)  // Update the state in altogether, not by element.
+  }
+
   return (
     <div>
       <div>
@@ -140,7 +155,7 @@ const App = () => {
         src={cardPair.src}
         category={cardPair.category}
       />
-      <button className="next" onClick={setNextCardPairAndIndex}>Next</button>
+      <button className="next" onClick={shuffleCards}>Shuffle Cards</button>
     </div>
   )
 }
