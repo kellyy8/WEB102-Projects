@@ -1,9 +1,10 @@
 import {useState} from 'react'
 import './Form.css'
 
-const Form = ({answer}) => {
+const Form = ({answer, onIncrement, onReset, updateLongestStreak}) => {
     const [guess, setGuess] = useState("")
     const [status, setStatus] = useState("neutral")  // Statuses: Neutral (no answer submitted yet), Correct, Incorrect
+    const [incremented, setIncremented] = useState(false)  // For current card, get a max of 1 point if correct.
 
     const onChange = (e) => {
         setGuess(e.target.value)
@@ -12,9 +13,15 @@ const Form = ({answer}) => {
 
     const onSubmit = () => {
         if(guess === answer){
+            if(!incremented){
+                onIncrement()
+                setIncremented(true)
+            }
             setStatus("correct")
         }
         else{
+            onReset()
+            updateLongestStreak()
             setStatus("incorrect")
         }
     }

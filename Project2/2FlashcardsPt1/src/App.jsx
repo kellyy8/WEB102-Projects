@@ -126,7 +126,7 @@ const App = () => {
   const [cardSequence, setCardSequence] = useState(
     Array.from({length: numCards}, (_, i) => i)
   )
-
+  
   const shuffleCards = () => {
     // Fisher-Yates Shuffle: Swap N cards at random indices for N times.
     let newCardSequence = [...cardSequence]
@@ -136,7 +136,7 @@ const App = () => {
     }
     setCardSequence(newCardSequence)  // Update the state in altogether, not by element.
   }
-
+  
   const nextCard = () => {
     if(cardPairIndex !== numCards-1){
       setCardPairIndex(cardPairIndex+1)
@@ -144,13 +144,24 @@ const App = () => {
       setCardPair(cardPairs[cardSequenceIndex])
     }
   }
-  
   const prevCard = () => {
     if(cardPairIndex !== 0){
       setCardPairIndex(cardPairIndex-1)
       const cardSequenceIndex = cardSequence[cardPairIndex]
       setCardPair(cardPairs[cardSequenceIndex])
     }
+  }
+  
+  const [longestStreak, setLongestStreak] = useState(0)
+  const [currentStreak, setCurrentStreak] = useState(0)
+  const incrementCurrentStreak = () => {
+    setCurrentStreak(currentStreak+1)
+  }
+  const resetCurrentStreak = () => {
+    setCurrentStreak(0)
+  }
+  const updateLongestStreak = () => {
+    setLongestStreak(Math.max(longestStreak, currentStreak))
   }
 
   return (
@@ -159,6 +170,7 @@ const App = () => {
         <h1>Throwback to Childhood Days!</h1>
         <p className="info">How well do you remember your childhood shows? Guess the corresponding series from different channels!</p>
         <p className="info">Number of cards: {numCards}</p>
+        <p className="info">Current Streak: {currentStreak} Longest Streak: {longestStreak}</p>
       </div>
       <Flashcard
         key={cardPairIndex}
@@ -170,6 +182,9 @@ const App = () => {
       <Form
         key={cardPairIndex+1}  // Children components must have different keys.
         answer={cardPair.answer}
+        onIncrement={incrementCurrentStreak}
+        onReset={resetCurrentStreak}
+        updateLongestStreak={updateLongestStreak}
       />
       <button className="prev" onClick={prevCard}>Previous</button>
       <button className="next" onClick={nextCard}>Next</button>
