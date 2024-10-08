@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import Flashcard from './Flashcard'
+import Form from './Form'
 import './App.css'
 
 const App = () => {
@@ -165,6 +166,10 @@ const App = () => {
         answer={cardPair.answer}
         src={cardPair.src}
         category={cardPair.category}
+      />
+      <Form
+        key={cardPairIndex+1}  // Children components must have different keys.
+        answer={cardPair.answer}
       />
       <button className="prev" onClick={prevCard}>Previous</button>
       <button className="next" onClick={nextCard}>Next</button>

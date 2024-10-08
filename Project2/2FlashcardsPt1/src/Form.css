@@ -1,0 +1,32 @@
+div.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+label.inputLabel {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input.neutral {
+    border: none;
+}
+
+input.correct {
+    border: 4px solid green;
+}
+
+input.incorrect {
+    border: 4px solid red;
+}
+
+button.submit {
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid white;
+    margin: 20px 5px;
+}
