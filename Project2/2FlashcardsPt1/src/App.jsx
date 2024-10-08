@@ -121,11 +121,6 @@ const App = () => {
   const [cardPair, setCardPair] = useState(cardPairs ? cardPairs[0] : undefined)
   const [cardPairIndex, setCardPairIndex] = useState(cardPairs ? 0 : -1)
 
-  const setNextCardPairAndIndex = () => {
-    setCardPairIndex(Math.floor(Math.random() * numCards))  // Expected output: 0, ..., numPairs-1
-    setCardPair(cardPairs[cardPairIndex])
-  }
-
   // Set sequence: Initialized to go through cards in order. Can be updated when cards are shuffled.
   const [cardSequence, setCardSequence] = useState(
     Array.from({length: numCards}, (_, i) => i)
@@ -139,6 +134,22 @@ const App = () => {
       [newCardSequence[i], newCardSequence[j]] = [newCardSequence[j], newCardSequence[i]]
     }
     setCardSequence(newCardSequence)  // Update the state in altogether, not by element.
+  }
+
+  const nextCard = () => {
+    if(cardPairIndex !== numCards-1){
+      setCardPairIndex(cardPairIndex+1)
+      const cardSequenceIndex = cardSequence[cardPairIndex]
+      setCardPair(cardPairs[cardSequenceIndex])
+    }
+  }
+  
+  const prevCard = () => {
+    if(cardPairIndex !== 0){
+      setCardPairIndex(cardPairIndex-1)
+      const cardSequenceIndex = cardSequence[cardPairIndex]
+      setCardPair(cardPairs[cardSequenceIndex])
+    }
   }
 
   return (
@@ -155,7 +166,9 @@ const App = () => {
         src={cardPair.src}
         category={cardPair.category}
       />
-      <button className="next" onClick={shuffleCards}>Shuffle Cards</button>
+      <button className="prev" onClick={prevCard}>Previous</button>
+      <button className="next" onClick={nextCard}>Next</button>
+      <button className="shuffle" onClick={shuffleCards}>Shuffle Cards</button>
     </div>
   )
 }
