@@ -1,0 +1,28 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: top;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.breedInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.breedInfo, .discover {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px;
+  border: 2px solid white;
+  border-radius: 16px;
+}
