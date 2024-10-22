@@ -1,31 +1,35 @@
-# Web Development Project 5 - *Name of App Here*
+# Web Development Project 5 - *Cat Island's Stats on Cats!*
 
 Submitted by: **Kelly Yu**
 
-This web app: **insert description**
+This web app: **displays of data such as breed and origin for a random set of cats that users can filter through via filter buttons or a search bar (text input).**
 
-Time spent: **X** hours spent in total
+Time spent: **3** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ ] **The list displays a list of data fetched using an API call**
-- [ ] **Data uses the useEffect React hook and async/await syntax**
-- [ ] **The app dashboard includes at least three summary statistics about the data such as**
-  - [ ] *insert details*
-- [ ] **A search bar allows the user to search for an item in the fetched data**
-- [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **The list displays a list of data fetched using an API call**
+- [x] **Data uses the useEffect React hook and async/await syntax**
+- [x] **The app dashboard includes at least three summary statistics about the data such as**
+  - [x] *Number of Bengal Cats*
+  - [x] *Number of Abyssinian Cats*
+  - [x] *Number of Cats From Thailand*
+- [x] **A search bar allows the user to search for an item in the fetched data**
+- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types such as a text input, a selection, or a slider
+- [x] Multiple filters can be applied simultaneously
+- [x] Filters use different input types such as a text input, a selection, or a slider
 - [ ] The user can enter specific bounds for filter values
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+* [x] List anything else that you added to improve the site's functionality!
+  - [x] *Shaded in the filter buttons when the corresponding filter was selected.*
+  - [x] *Included placeholder value for the search bar so users know what type of information to input.*
 
 ## Video Walkthrough
 

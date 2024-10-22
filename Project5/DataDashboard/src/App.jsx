@@ -9,7 +9,7 @@ function App() {
   
   const [numBengals, setNumBengals] = useState(0)
   const [numAbyssinians, setNumAbyssinians] = useState(0)
-  const [numSiamese, setNumSiamese] = useState(0)
+  const [numThailand, setNumThailand] = useState(0)
 
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -27,7 +27,7 @@ function App() {
 
         setNumBengals(json.filter(cat => cat.breeds[0].name === "Bengal").length)
         setNumAbyssinians(json.filter(cat => cat.breeds[0].name === "Abyssinian").length)
-        setNumSiamese(json.filter(cat => cat.breeds[0].name === "Siamese").length)
+        setNumThailand(json.filter(cat => cat.breeds[0].origin === "Thailand").length)
 
         console.log(json)
       }
@@ -97,7 +97,7 @@ function App() {
       <div className="stats"> 
         <h2> # of Bengal Cats: {numBengals} </h2>
         <h2> # of Abyssinian Cats: {numAbyssinians} </h2>
-        <h2> # of Siamese Cats: {numSiamese} </h2>
+        <h2> # of Cats From Thailand: {numThailand} </h2>
       </div>
       
       <div className="searchBar">
