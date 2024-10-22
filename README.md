@@ -35,6 +35,6 @@ This web app fetches data from an API for a random set of cats (e.g.,breeds and 
 
 ## Video Walkthrough
 
-<img src='' />
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project5/P5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
 
 GIF created with [Kap](https://getkap.co/) for macOS.
