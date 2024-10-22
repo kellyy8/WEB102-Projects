@@ -2,7 +2,7 @@
 
 Submitted by: **Kelly Yu**
 
-This web app: **displays of data such as breed and origin for a random set of cats that users can filter through via filter buttons or a search bar (text input).**
+This web app: **fetches data from an API for a random set of cats (e.g.,breeds and origins) that users can filter through via buttons or a search bar (text input).**
 
 Time spent: **3** hours spent in total
 
