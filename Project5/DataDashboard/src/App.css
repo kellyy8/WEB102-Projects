@@ -4,3 +4,44 @@
   padding: 2rem;
   text-align: center;
 }
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 2rem;
+  height: 50px;
+
+  & button {
+    border: 1px solid #ccc;
+
+    &.on{
+      background-color: rgb(119, 138, 144);
+    }
+    &.off{
+      background-color: transparent;
+    }
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.dataHeader, .catDataRow {
+  width: 1500px;
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+:is(.dataHeader, .catDataRow) p {
+  font-size: 1.5em;
+}
+
+.dataHeader p {
+  font-weight: 900;
+}
