@@ -41,7 +41,7 @@ function App() {
 
   useEffect(() => {
     if(breedFilters.size > 0){
-      const filteredData = allCatData.filter(cat => breedFilters.has(cat.breeds[0].name))
+      const filteredData = allCatData.filter(cat => breedFilters.has(cat.breeds[0].name) || breedFilters.has(cat.breeds[0].origin))
       setFilteredCatData(filteredData)
     }
     else{
@@ -64,6 +64,24 @@ function App() {
   const addSiameseFilter = () => {
     const breedFiltersCopy = new Set(breedFilters)
     breedFiltersCopy.has("Siamese") ? breedFiltersCopy.delete("Siamese") : breedFiltersCopy.add("Siamese")
+    setBreedFilters(breedFiltersCopy)
+  }
+
+  const addEgyptFilter = () => {
+    const breedFiltersCopy = new Set(breedFilters)
+    breedFiltersCopy.has("Egypt") ? breedFiltersCopy.delete("Egypt") : breedFiltersCopy.add("Egypt")
+    setBreedFilters(breedFiltersCopy)
+  }
+
+  const addThailandFilter = () => {
+    const breedFiltersCopy = new Set(breedFilters)
+    breedFiltersCopy.has("Thailand") ? breedFiltersCopy.delete("Thailand") : breedFiltersCopy.add("Thailand")
+    setBreedFilters(breedFiltersCopy)
+  }
+
+  const addUSFilter = () => {
+    const breedFiltersCopy = new Set(breedFilters)
+    breedFiltersCopy.has("United States") ? breedFiltersCopy.delete("United States") : breedFiltersCopy.add("United States")
     setBreedFilters(breedFiltersCopy)
   }
 
@@ -92,10 +110,18 @@ function App() {
       </div>
 
       <div className="filters">
-        <p>Filter by breeds: </p>
-        <button className={breedFilters.has("Bengal") ? "on" : "off"} onClick={addBengalFilter}>Bengal</button>
-        <button className={breedFilters.has("Abyssinian") ? "on" : "off"} onClick={addAbyssinianFilter}>Abyssinian</button>
-        <button className={breedFilters.has("Siamese") ? "on" : "off"} onClick={addSiameseFilter}>Siamese</button>
+        <div className="filterCategory">
+          <p>Filter by breeds: </p>
+          <button className={breedFilters.has("Bengal") ? "on" : "off"} onClick={addBengalFilter}>Bengal</button>
+          <button className={breedFilters.has("Abyssinian") ? "on" : "off"} onClick={addAbyssinianFilter}>Abyssinian</button>
+          <button className={breedFilters.has("Siamese") ? "on" : "off"} onClick={addSiameseFilter}>Siamese</button>
+        </div>
+        <div className="filterCategory">
+          <p>Filter by breeds: </p>
+          <button className={breedFilters.has("Egypt") ? "on" : "off"} onClick={addEgyptFilter}>Egypt</button>
+          <button className={breedFilters.has("Thailand") ? "on" : "off"} onClick={addThailandFilter}>Thailand</button>
+          <button className={breedFilters.has("United States") ? "on" : "off"} onClick={addUSFilter}>United States</button>
+        </div>
       </div>
 
       <div className="dataHeader">
