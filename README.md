@@ -4,7 +4,7 @@ This web app displays a list of dance styles with gifs, fun facts, and links to 
 
 ## Video Walkthrough
 
-<img src='https://github.com/kellyy8/webdev102-lab1/blob/main/Kapture%202024-09-23%20at%2023.42.53.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project1/P1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
@@ -14,7 +14,7 @@ This web app contains 22 flashcards that match the descriptions of kids' shows t
 
 ## Video Walkthrough
 
-<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2/2FlashcardsPt1/Kapture%202024-09-30%20at%2000.12.58.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2/P2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
 
@@ -25,6 +25,6 @@ This is an extension of Project 2. It contains additional features that allow us
 
 ## Video Walkthrough
 
-<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Kapture%202024-10-07%20at%2023.43.55.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2/P3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.

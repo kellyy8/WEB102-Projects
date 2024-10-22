@@ -31,7 +31,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project4/VeniVici/Kapture%202024-10-14%20at%2023.54.07.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project4/P4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
 
