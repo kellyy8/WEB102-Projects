@@ -31,7 +31,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2/P2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2%263/P2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
 

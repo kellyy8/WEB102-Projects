@@ -14,7 +14,7 @@ This web app contains 22 flashcards that match the descriptions of kids' shows t
 
 ## Video Walkthrough
 
-<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2/P2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2%263/P2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
 
@@ -25,6 +25,6 @@ This is an extension of Project 2. It contains additional features that allow us
 
 ## Video Walkthrough
 
-<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2/P3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project2%263/P3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
