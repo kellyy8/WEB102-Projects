@@ -11,6 +11,8 @@ function App() {
   const [numAbyssinians, setNumAbyssinians] = useState(0)
   const [numSiamese, setNumSiamese] = useState(0)
 
+  const [searchTerm, setSearchTerm] = useState("")
+
   useEffect(() => {
     const fetchCatData = async () => {
       try{
@@ -65,6 +67,11 @@ function App() {
     setBreedFilters(breedFiltersCopy)
   }
 
+  const filterDataBySearch = () => {
+    const filteredData = allCatData.filter(cat => cat.breeds[0].name.toLowerCase().includes(searchTerm.toLowerCase()))
+    setFilteredCatData(filteredData)
+  }
+
   return (
     <div>
       <h1> Cat Island's Stats on Cats! </h1>
@@ -73,6 +80,15 @@ function App() {
         <h2> # of Bengal Cats: {numBengals} </h2>
         <h2> # of Abyssinian Cats: {numAbyssinians} </h2>
         <h2> # of Siamese Cats: {numSiamese} </h2>
+      </div>
+      
+      <div className="searchBar">
+        <input
+          type="text"
+          placeholder="Search by a breed..."
+          onChange={(e) => {setSearchTerm(e.target.value)}}
+          />
+        <button onClick={filterDataBySearch}>Search</button>
       </div>
 
       <div className="filters">
