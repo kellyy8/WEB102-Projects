@@ -29,12 +29,22 @@ This is an extension of Project 2. It contains additional features that allow us
 
 GIF created with [Kap](https://getkap.co/) for macOS.
 
-# Project 5 - *Cat Island's Stats on Cats!*
+# Project 5 - *Cat Island's Stats on Cats! [Part 1]*
 
 This web app fetches data from an API for a random set of cats (e.g.,breeds and origins) that users can filter through via buttons or a search bar (text input).
 
 ## Video Walkthrough
 
-<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project5/P5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project5%266/P5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
+
+GIF created with [Kap](https://getkap.co/) for macOS.
+
+# Project 6 - *Cat Island's Stats on Cats! [Part 2]*
+
+This web app extends Project 5 by allowing users to discover more information about each cat in the list by clicking on each data entry.
+
+## Video Walkthrough
+
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project5%266/P6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
