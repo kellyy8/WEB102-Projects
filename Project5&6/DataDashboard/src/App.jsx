@@ -135,7 +135,7 @@ function App() {
       {filteredCatData && filteredCatData.map((cat, index) => (
         <Link
           style={{ color: "White" }}
-          to={`/catDetails/${cat.breeds[0].id}`}
+          to={`/catDetails/${cat.breeds[0].id}${index}`}
           key={cat.breeds[0].id+index}
         >
           <div key={index} className="catDataRow">

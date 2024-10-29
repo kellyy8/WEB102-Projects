@@ -9,7 +9,7 @@ const CatDetail = () => {
     useEffect(() => {
       const getCatDetails = async () => {
         // Store the breed id into param.symbol to use to fetch breed and image of cat.
-        const details = await fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${params.symbol}`)
+        const details = await fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${params.symbol.slice(0,4)}`)
         // Get descriptions of all breeds.
         const description = await fetch('https://api.thecatapi.com/v1/breeds')
 
@@ -19,7 +19,7 @@ const CatDetail = () => {
         setImg(detailsJson[0].url) // Store image url of the cat.
   
         for(let i = 0; i < descripJson.length; i++){  // Store description of breed with matching breed id.
-          if(descripJson[i].id === params.symbol){
+          if(descripJson[i].id === params.symbol.slice(0,4)){
             setDescription(descripJson[i])
             break
           }
