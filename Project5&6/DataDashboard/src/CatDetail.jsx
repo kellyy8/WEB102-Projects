@@ -27,17 +27,16 @@ const CatDetail = () => {
       }
         
       getCatDetails().catch(console.error)
-        
     }, [params.symbol])
 
     return (
-        <div>
-          <h1> Cat Details </h1>
-          <img src={img} height="300px" min-with="100%" title="Image of a cat of described breed."/>
-          <h2> Breed: {description.name} </h2>
-          <p> <span style={{fontWeight: "bolder"}}> Description: </span> {description.description} </p>
-        </div>
+      <div>
+        <h1> Cat Details </h1>
+        <img src={img} height="300px" min-with="100%" title="Image of a cat of described breed."/>
+        <h2> Breed: {description.name} </h2>
+        <p> <span style={{fontWeight: "bolder"}}> Description: </span> {description.description} </p>
+      </div>
     )
 }
-  
+
 export default CatDetail

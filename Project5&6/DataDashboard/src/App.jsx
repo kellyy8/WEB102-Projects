@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 import './App.css'
 
 function App() {
@@ -132,12 +133,18 @@ function App() {
       </div>
 
       {filteredCatData && filteredCatData.map((cat, index) => (
-        <div key={index} className="catDataRow">
-          <p>{index + 1}</p>
-          <p>{cat.breeds[0].name}</p>
-          <p>{cat.breeds[0].indoor ? "Yes" : "No"}</p>
-          <p>{cat.breeds[0].origin}</p>
-        </div>
+        <Link
+          style={{ color: "White" }}
+          to={`/catDetails/${cat.breeds[0].id}`}
+          key={cat.breeds[0].id+index}
+        >
+          <div key={index} className="catDataRow">
+            <p>{index + 1}</p>
+            <p>{cat.breeds[0].name}</p>
+            <p>{cat.breeds[0].indoor ? "Yes" : "No"}</p>
+            <p>{cat.breeds[0].origin}</p>
+          </div>
+        </Link>
       ))}
     </div>
   )
