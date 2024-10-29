@@ -29,8 +29,6 @@ function App() {
         setNumBengals(json.filter(cat => cat.breeds[0].name === "Bengal").length)
         setNumAbyssinians(json.filter(cat => cat.breeds[0].name === "Abyssinian").length)
         setNumThailand(json.filter(cat => cat.breeds[0].origin === "Thailand").length)
-
-        console.log(json)
       }
       catch (error){
         console.error(error.message)
@@ -94,6 +92,14 @@ function App() {
   return (
     <div>
       <h1> Cat Island's Stats on Cats! </h1>
+      <h2> Explore the dashboard of different cats. </h2>
+      <h2> Click on a row to learn more about the cat! </h2>
+      <h3> At a glance, we can see that most Abyssinian cats are from Egypt,
+          whereas Bengal cats are from the United States and Siamese cats are from Thailand.</h3>
+
+      <br></br>
+      <br></br>
+      <br></br>
 
       <div className="stats"> 
         <h2> # of Bengal Cats: {numBengals} </h2>
