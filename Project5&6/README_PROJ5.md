@@ -1,4 +1,4 @@
-# Web Development Project 5 - *Cat Island's Stats on Cats!*
+# Web Development Project 5 - *Cat Island's Stats on Cats! [Part 1]*
 
 Submitted by: **Kelly Yu**
 
