@@ -3,14 +3,12 @@ import { Outlet, Link } from "react-router-dom"
 const Layout = () => {
   return (
     <div>
-      <nav>
-        <ul>
-          <li className="home-link" key="home-button">
-            <Link style={{ color: "white" }} to="/">
-              Home
-            </Link>
-          </li>
-        </ul>
+      <nav style={{width:"100%"}}>
+        <div className="home-link" key="home-button">
+          <Link style={{ color: "white" }} to="/">
+            Home
+          </Link>
+        </div>
       </nav>
       
       <Outlet/>
