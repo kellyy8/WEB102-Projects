@@ -5,19 +5,44 @@ import './Gallery.css'
 
 const Gallery = () => {
     const [profiles, setProfiles] = useState([])
+    const [colorCounts, setColorCounts] = useState({})
 
     useEffect(() => { // TODO
-        const fetchTeammates = async () => {
+        const fetchTeamData = async () => {
             const {data} = await supabase.from('Teammates').select().order('created_at', {ascending: true})
             setProfiles(data)
+
+            const colorCounts = {}
+            data.forEach((profile) => {
+                profile.favorite_colors.forEach((color) => {
+                    if (colorCounts[color]) {
+                        colorCounts[color]++
+                    } else {
+                        colorCounts[color] = 1
+                    }
+                })
+            })
+            setColorCounts(colorCounts)
         }
         
-        fetchTeammates()
+        fetchTeamData()
     }, [])
 
     return (
         <div>
             <h1>Gallery</h1>
+            <h2> Stats:</h2>
+            <p> Currently, we have a total of {profiles.length} teammates!</p>
+            {profiles && profiles.length > 0 ? 
+                <div>
+                    <p>Here's the like count for each color with at least 1 like!</p>
+                    {Object.entries(colorCounts).map(([color, count], index) => 
+                        <p key={index}>{color}: {count}</p>
+                    )}
+                </div>
+                :
+                <></>
+            }
             <div className="galleryContainer">
                 {
                     profiles && profiles.length > 0 ?
