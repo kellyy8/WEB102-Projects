@@ -7,8 +7,9 @@ const UpdateTeammate = () => {
     const {symbol} = useParams()
 
     const id_index = symbol.indexOf('_')
-    const [id, setId] = useState(symbol.slice(id_index+1, symbol.length))
-    const [name, setName] = useState(symbol.slice(0, id_index))
+    const [id, _] = useState(symbol.slice(id_index+1, symbol.length))
+    const [name, setName] = useState("")
+    const [currName, __] = useState(symbol.slice(0, id_index))
     const [favColors, setFavColors] = useState([])
     const [currFavColors, setCurrFavColors] = useState(["Red"])
 
@@ -37,7 +38,7 @@ const UpdateTeammate = () => {
             const {data} = await supabase.from('Teammates').select()
 
             for (let i = 0; i < data.length; i++) {
-                if (data[i].id === id) {
+                if (data[i].name === currName) {
                     setName(data[i].name)
                     setCurrFavColors(data[i].favorite_colors)
                     break
@@ -55,7 +56,7 @@ const UpdateTeammate = () => {
         const {data} = await supabase.from('Teammates').select()
 
         for (let i = 0; i < data.length; i++) {
-            if (data[i].name === name) {
+            if (data[i].name === currName) {
                 await supabase
                     .from('Teammates')
                     .update({name: name, favorite_colors: favColors})
@@ -69,11 +70,11 @@ const UpdateTeammate = () => {
 
     return(
         <div>
-            <h1>Update teammate {name}'s information!</h1>
+            <h1>Update teammate {currName}'s information!</h1>
             <form className="teammateFormContainer">
                 <label htmlFor="name">
                     <span style={{fontSize: "18px", fontWeight: "bolder"}}>Name: </span>
-                    <input type="text" id="name" name="name" onChange={handleNameChange} placeholder={name}/>  {/** "name" maps to db column */}
+                    <input type="text" id="name" name="name" onChange={handleNameChange} placeholder={currName}/>  {/** "name" maps to db column */}
                     <br/>
                 </label>
                 <br/>
