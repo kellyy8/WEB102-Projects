@@ -35,7 +35,7 @@ const CreateTeammate = () => {
             .insert({name: teammateName, favorite_colors: favColors})
             .select()
 
-        window.location = "/"
+        window.location = "/gallery"
     }
 
     return(
