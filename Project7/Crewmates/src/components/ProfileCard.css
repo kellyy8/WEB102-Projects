@@ -4,3 +4,10 @@
     padding: 20px;
     margin: 20px;
 }
+
+.CRUDProfileLinks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+}

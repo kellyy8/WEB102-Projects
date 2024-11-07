@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
 import {supabase} from './client.js'
 import ProfileCard from './components/ProfileCard'
 import './Gallery.css'
@@ -23,13 +22,7 @@ const Gallery = () => {
                 {
                     profiles && profiles.length > 0 ?
                     profiles.map((profile) => 
-                        <Link
-                        style={{color: "white"}}
-                        to={`/teammateDetails/${profile.name}_${profile.id}`}
-                        key={`${profile.name}_${profile.id}`}
-                        >
-                            <ProfileCard id={profile.id} name={profile.name} colors={profile.favorite_colors}/>
-                        </Link>
+                        <ProfileCard id={profile.id} name={profile.name} colors={profile.favorite_colors}/>
                     )
                     :
                     <h2>No teammates yet!</h2>

@@ -6,6 +6,7 @@ import App from './App.jsx'
 import CreateTeammate from './CreateTeammate.jsx'
 import Gallery from './Gallery.jsx'
 import ProfilePage from './ProfilePage.jsx'
+import UpdateTeammate from './UpdateTeammate.jsx'
 
 const Layout = () => {
   return (
@@ -36,6 +37,7 @@ createRoot(document.getElementById('root')).render(
           <Route index={false} path="/teammateDetails/:symbol" element={<ProfilePage/>}/>
           <Route index={false} path="/create" element={<CreateTeammate />} />
           <Route index={false} path="/gallery" element={<Gallery />} />
+          <Route index={false} path="/update/:symbol" element={<UpdateTeammate/>} />
         </Route>
       </Routes>
     </BrowserRouter>
