@@ -1,0 +1,12 @@
+.profile{
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.galleryContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
