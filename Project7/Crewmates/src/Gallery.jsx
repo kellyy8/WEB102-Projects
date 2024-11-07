@@ -1,30 +1,31 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {supabase} from './client.js'
+import ProfileCard from './components/ProfileCard'
 import './Gallery.css'
 
-const Profile = () => {
-    return (
-        <div className="profile">
-            <h1>"Name"</h1>
-            <h2>Attributes: </h2>
-            {/* * Paragraph element for every attribute in the list. */}
-            {/** View profile button. */}
-            {/** Update button. */}
-            {/** Delete button. */}
-        </div>
-    )
-    
-}
-
 const Gallery = () => {
+    const [profiles, setProfiles] = useState([])
+
+    useEffect(() => { // TODO
+        const fetchTeammates = async () => {
+            const {data} = await supabase.from('Teammates').select().order('created_at', {ascending: true})
+            setProfiles(data)
+        }
+        
+        fetchTeammates()
+    }, [])
+
     return (
         <div>
             <h1>Gallery</h1>
             <div className="galleryContainer">
-                <Profile/>
-                <Profile/>
-                {/* * A list of all the crewmates in the gallery. */}
-                {/* * Each crewmate should be a link to their profile page. */}
-            </div>
+                {
+                    profiles && profiles.length > 0 ?
+                    profiles.map((profile) => <ProfileCard name={profile.name} colors={profile.favorite_colors}/>)
+                    :
+                    <h2>No teammates yet!</h2>
+                }
+            </div>  
         </div>
     )
 }

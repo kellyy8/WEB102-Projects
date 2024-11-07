@@ -32,7 +32,7 @@ const CreateTeammate = () => {
 
         await supabase
             .from('Teammates')
-            .insert({name: teammateName, attributes: favColors})
+            .insert({name: teammateName, favorite_colors: favColors})
             .select()
 
         window.location = "/"
@@ -42,15 +42,15 @@ const CreateTeammate = () => {
         <div>
             <h1>Fill out the information below to create a new teammate!</h1>
             <form className="teammateFormContainer">
-                <label for="name">
+                <label htmlFor="name">
                     <span style={{fontSize: "18px", fontWeight: "bolder"}}>Name: </span>
-                    <input type="text" id="name" name="name" onChange={handleNameChange}/>  {/** "name" maps to db column. */}
+                    <input type="text" id="name" name="name" onChange={handleNameChange}/>  {/** "name" maps to db column */}
                     <br/>
                 </label>
                 <br/>
 
                 <h3>Favorite Color:</h3>
-                <div class="colorPicker">  {/** "value" attribute is stored in the db */}
+                <div className="colorPicker">  {/** "value" attribute is stored in the db */}
                     <label><input type="checkbox" id="red" value="Red" onChange={handleColorChange}/>Red</label>
                     <label><input type="checkbox" id="orange" value="Orange" onChange={handleColorChange}/>Orange</label>
                     <label><input type="checkbox" id="yellow" value="Yellow" onChange={handleColorChange}/><span>Yellow</span></label>
