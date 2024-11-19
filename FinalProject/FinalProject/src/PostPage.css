@@ -62,7 +62,7 @@
     
     background-color: var(--light-brown);
     border-radius: 0.5rem;
-    
+
     & h2 {
         font-size: var(--font-size-medium);
         margin-bottom: 3rem;
@@ -96,7 +96,7 @@
         color: var(--lighter-brown);
 
         &:focus {
-            outline-color: var(--lighter-brown);
+            outline-color: var(--light-brown);
         }
     }
 
@@ -112,7 +112,7 @@
         color: var(--lighter-brown);
         
         &:hover {
-            background-color: var(--lighter-brown);
+            background-color: var(--medium-brown);
             color: var(--dark-brown);
         }
     }
