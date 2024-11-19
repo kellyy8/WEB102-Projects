@@ -4,18 +4,7 @@ import PostCard from './PostCard'
 import './Gallery.css'
 
 const Gallery = () => {
-    const [posts, setPosts] = useState([
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-        {title: 'Title', timestamp: '11:11PM', upvotes: 1},
-    ])
+    const [posts, setPosts] = useState([])
 
     useEffect(() => {
         // Fetch posts from database.
