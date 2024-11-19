@@ -18,9 +18,36 @@ const Gallery = () => {
 
     }, [])
 
+    const handleSortByNewest = () => {
+        const sortedPosts = [...posts].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+        setPosts(sortedPosts)
+    }
+
+    const handleSortByMostPopular = () => {
+        const sortedPosts = [...posts].sort((a, b) => {
+            if (b.upvotes === a.upvotes) {
+                // Tie-breaker: newest post first
+                return new Date(b.timestamp) - new Date(a.timestamp)
+            }
+            return b.upvotes - a.upvotes
+        })
+        setPosts(sortedPosts)
+    }
+
     return(
         <div>
             <h1>Gallery</h1>
+
+            <div className="filters">
+                <p> Order by: </p>
+                <button onClick={handleSortByNewest}>
+                    Newest
+                </button>
+                <button onClick={handleSortByMostPopular}>
+                    Most Popular
+                </button>
+            </div>
+
             <div className="postsContainer">
                 {posts && posts.map((post) =>{
                     const timestamp = new Date(post.created_at).toLocaleString("en-US", {

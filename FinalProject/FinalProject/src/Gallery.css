@@ -3,3 +3,21 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+
+    color: var(--dark-brown);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bolder);
+
+    & button {
+        background-color: var(--dark-brown);
+        color: var(--lighter-brown);
+        font-size: var(--font-size-smaller);
+        font-weight: var(--font-weight-bolder);
+    }
+}
