@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from './client.js'
 import './CreatePost.css'
+import { useParams } from 'react-router-dom'
 
 const CreatePost = ({isUpdate}) => {
-    const [id, setId] = useState('')
+    // Retrieve post id from URL params and convert it to a number to match database's id type.
+    const param = useParams().id
+    const [id, setId] = useState(isUpdate ? Number(param) : '')
+
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [imageURL, setImageURL] = useState('')
@@ -11,16 +15,19 @@ const CreatePost = ({isUpdate}) => {
     const [error, setError] = useState(false)
 
     useEffect(() => {
-        // Fetch post data from database.
+        // For udpates, fetch post data from database to populate the inputs with existing data.
         const fetchPost = async () => {
-            const {data} = await supabase.from('Posts').select().eq('id', id).maybeSingle()
-
-            // TODO: Populate the form with the existing post data.
-            setTitle(data.title)
-            setContent(data.content)
-            setImageURL(data.imageURL)
+            const {data, error} = await supabase.from('Posts').select().eq('id', id).maybeSingle()
+            if (error) {
+                console.error("Error fetching post: ", error)
+            }
+            else {
+                setTitle(data.title)
+                setContent(data.content)
+                setImageURL(data.imageURL)
+            }
         }
-        
+
         if (isUpdate) {
             fetchPost()
         }
@@ -55,14 +62,15 @@ const CreatePost = ({isUpdate}) => {
 
         if (!isUpdate) {
             // Add new post data to database. Redirect to gallery page after.
-            const {_, error} = await supabase.from('Posts').insert({title: title, content: content, imageURL: imageURL}).select()
+            const {data, error} = await supabase.from('Posts').insert({title: title, content: content, imageURL: imageURL}).select()
             if (error) {
                 console.error("Error adding post: ", error)
             }
-            window.location = "/gallery"
+            else {
+                window.location = `/post/${data[0].id}`
+            }
         }
         else {
-            // TODO: Test out the update functionality.
             // Update post data in database. Redirect back to post page after.
             const {data, error} = await supabase.from('Posts').update({title: title, content: content, imageURL: imageURL}).eq('id', id).select()
             if (error) {
@@ -70,8 +78,8 @@ const CreatePost = ({isUpdate}) => {
             }
             else {
                 setId(data[0].id)
+                window.location = `/post/${id}`
             }
-            window.location = `/post/${id}`
         }
     }
 
