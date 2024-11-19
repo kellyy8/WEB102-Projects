@@ -12,12 +12,12 @@
 
     & h1 {
         font-size: var(--font-size-larger);
-        margin: 24px;
+        line-height: 0.5rem;
     }
 
     & h2 {
         font-size: var(--font-size-medium);
-        margin: 24px;
+        line-height: 0.5rem;
     }
 
     & p {
@@ -25,10 +25,32 @@
     }
 }
 
-#upvotes {
+.icons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    column-gap: 10px;
-    font-size: var(--font-size-smaller);
+    width: 400px;
+
+    & img {
+        cursor: pointer;
+    }
+    
+    & .crud {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    & #upvotes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+
+        & p {    
+            font-size: var(--font-size-small);
+            line-height: 0;
+        }
+    }
 }

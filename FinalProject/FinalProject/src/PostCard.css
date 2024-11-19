@@ -21,14 +21,6 @@
         font-size: var(--font-size-small);
     }
 
-    & .upvotes {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: 10px;
-        font-size: var(--font-size-small);
-    }
-
     &:hover{
         box-shadow: 1px 1px 8px 1px var(--dark-brown);
     }

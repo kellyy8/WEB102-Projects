@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { supabase } from './client.js'
 import like from './images/like.png'
+import edit from './images/edit.png'
+import remove from './images/remove.png'
 import './PostPage.css'
 
 const PostPage = () => {
@@ -26,17 +28,53 @@ const PostPage = () => {
         fetchPost()
     }, [id])
 
+    const incrementUpvotes = async () => {
+        // Update upvotes in database.
+        const {_, error} = await supabase.from('Posts').update({upvotes: post.upvotes + 1}).eq('id', id)
+
+        // If successful, update the upvotes in the state.
+        if (error) {
+            console.error("Error updating upvotes: ", error)
+        } else {
+            setPost({...post, upvotes: post.upvotes + 1})
+        }
+    }
+
+    const deletePost = async () => {
+        // Delete post from database.
+        const {_, error} = await supabase.from('Posts').delete().eq('id', id)
+
+        // If successful, redirect to the gallery page.
+        if (error) {
+            console.error("Error deleting post: ", error)
+        } else {
+            window.location.href = '/gallery'
+        }
+    }
+
+    // TODO:
+    // const editPost = async () => {
+    //     // Redirect to the edit post page.
+    //     window.location.href = `/edit/${id}`
+    // }
+        
     return (
         <div className="postPageContainer">
             <p id="timestamp">Posted on {post.created_at}</p>
 
             <h1 id="title">{post.title}</h1>
             <p id="content">{post.content}</p>
-            <img src={post.imageURL} height="200px" alt="Image of craft."/>
+            <img src={post.imageURL} width="400px" alt="Image of craft."/>
 
-            <div id="upvotes">
-                <img src={like} alt="Like" height="20px" width="20px"/> 
-                <p>{post.upvotes}</p>
+            <div className="icons">
+                <div id="upvotes">
+                    <img src={like} alt="Like" height="30px" width="30px" onClick={incrementUpvotes}/> 
+                    <p>{post.upvotes}</p>
+                </div>
+                <div className="crud">
+                    <img src={edit} alt="Like" height="30px" width="30px"/>
+                    <img src={remove} alt="Like" height="30px" width="30px" onClick={deletePost}/>
+                </div>
             </div>
 
             <div id="comments">
