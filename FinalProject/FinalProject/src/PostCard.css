@@ -3,20 +3,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
-    width: 250px;
-    margin: 10px;
-    padding: 10px;
+    height: 200px;
+    width: 500px;
+    margin: 25px;
+    padding: 25px;
     
-    border: 1px solid var(--dark-brown);
+    border: 2px solid var(--dark-brown);
     border-radius: 10px;
     color: var(--dark-brown);
+    background-color: var(--lighter-brown);
 
     & h1{
         font-size: var(--font-size-large);
     }
 
     & p{
+        font-size: var(--font-size-small);
+    }
+
+    & .upvotes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
         font-size: var(--font-size-small);
     }
 }
