@@ -39,3 +39,7 @@
         }
     }
 }
+
+#content {
+    resize: vertical;
+}
