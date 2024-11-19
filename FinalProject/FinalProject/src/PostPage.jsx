@@ -28,14 +28,16 @@ const CommentsSection = ({post, setPost}) => {
     }
 
     return (
-        <div>
+        <div className="commentsContainer">
             <h2>Comments</h2>
 
-            {post && post.comments && post.comments.map((comment, index) => {
-                return (
-                    <p key={index}>{comment}</p>
-                )
-            })}
+            <div className="existingComments">
+                {post && post.comments && post.comments.map((comment, index) => {
+                    return (
+                        <p key={index}>{comment}</p>
+                    )
+                })}
+            </div>
 
             <form id="newComment" onSubmit={handleSubmit}>
                 <input

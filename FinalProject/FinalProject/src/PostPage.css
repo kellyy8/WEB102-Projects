@@ -55,6 +55,30 @@
     }
 }
 
+.commentsContainer {
+    width: 600px;
+    margin-top: 1rem;
+    padding: 2rem;
+    
+    background-color: var(--light-brown);
+    border-radius: 0.5rem;
+    
+    & h2 {
+        font-size: var(--font-size-medium);
+        margin-bottom: 3rem;
+    }
+}
+
+.existingComments > p {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    text-align: left;
+    
+    color: var(--dark-brown);
+    background-color: var(--medium-brown);
+}
+
 & #newComment {
     display: flex;
     justify-content: center;
