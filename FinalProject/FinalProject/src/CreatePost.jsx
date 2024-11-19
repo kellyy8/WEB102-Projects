@@ -42,6 +42,7 @@ const CreatePost = () => {
                 <label htmlFor="imageURL">Image URL</label>
                 <input id="imageURL" type="text" value={imageURL} onChange={handleTextChange}/>
 
+                <br/>
                 <button id="submitPost" type="submit" onClick={handleSubmit}>
                     {isUpdate ? 'Update Post' : 'Create Post'}
                 </button>

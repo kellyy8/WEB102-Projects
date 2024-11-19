@@ -26,6 +26,12 @@
         font-weight: var(--font-weight-bold);
         color: var(--dark-brown);
         background-color: var(--medium-brown);
+        border: 2px solid var(--dark-brown);
         border-radius: 0.5rem;
+
+        &:hover {
+            background-color: var(--dark-brown);
+            color: var(--lighter-brown);
+        }
     }
 }
