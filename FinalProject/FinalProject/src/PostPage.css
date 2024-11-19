@@ -54,3 +54,42 @@
         }
     }
 }
+
+& #newComment {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    column-gap: 1rem;
+
+    & input {
+        width: 300px;
+        height: 1rem;
+        padding: 0.5rem;
+
+        border-radius: 0.5rem;
+
+        font-size: var(--font-size-smaller);
+        color: var(--lighter-brown);
+
+        &:focus {
+            outline-color: var(--lighter-brown);
+        }
+    }
+
+    & button {
+        padding: 0.5rem;
+
+        border-radius: 0.5rem;
+        border: 2px solid var(--dark-brown);
+
+        font-size: var(--font-size-smaller);
+        font-weight: var(--font-weight-bolder);
+        background-color: var(--dark-brown);
+        color: var(--lighter-brown);
+        
+        &:hover {
+            background-color: var(--lighter-brown);
+            color: var(--dark-brown);
+        }
+    }
+}

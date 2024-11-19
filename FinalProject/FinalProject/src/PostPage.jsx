@@ -6,6 +6,51 @@ import edit from './images/edit.png'
 import remove from './images/remove.png'
 import './PostPage.css'
 
+const CommentsSection = ({post, setPost}) => {
+    const [newComment, setNewComment] = useState('')
+
+    const handleTextChange = (e) => {
+        setNewComment(e.target.value)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        // Update comments (state variable, not database).
+        if (post.comments === null) {
+            setPost({...post, comments: [newComment]})
+        }
+        else {
+            setPost({...post, comments: [...post.comments, newComment]})
+        }
+
+        setNewComment('')
+    }
+
+    return (
+        <div>
+            <h2>Comments</h2>
+
+            {post && post.comments && post.comments.map((comment, index) => {
+                return (
+                    <p key={index}>{comment}</p>
+                )
+            })}
+
+            <form id="newComment" onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    value={newComment}
+                    placeholder="Add a comment..."
+                    onChange={handleTextChange}
+                    alt="New comment form."
+                />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    )
+}
+
 const PostPage = () => {
     const {id} = useParams()
     const [post, setPost] = useState({})
@@ -77,12 +122,8 @@ const PostPage = () => {
             </div>
 
             <div id="comments">
-                <h2>Comments</h2>
-                {post && post.comments ?
-                    <p> Comments </p>            /** TODO: Populate with comments from database. */
-                    :
-                    <p>No comments yet!</p>
-                }
+                {/** Lift up state: comments children to post parent. */}
+                <CommentsSection comments={post.comments} post={post} setPost={setPost}/>
             </div>
         </div>
     )
