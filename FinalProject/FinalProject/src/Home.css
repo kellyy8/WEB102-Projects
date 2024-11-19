@@ -1,5 +1,8 @@
 #root {
+  /* Ensure whole screen is filled up. Empty space contains background color. */
   width: 100vw;
+  min-height: 100vh;
+  
   text-align: center;
 
   background-color: var(--light-brown);
