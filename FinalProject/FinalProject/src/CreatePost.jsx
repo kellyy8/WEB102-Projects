@@ -1,15 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { supabase } from './client.js'
 import './CreatePost.css'
 
-const CreatePost = () => {
-    const [isUpdate, setIsUpdate] = useState(false)  // TODO: Change to true if updating a post.
-    const [error, setError] = useState(false)
-
-    const [id, setId] = useState('')                // TODO: Set the post ID if updating a post.
+const CreatePost = ({isUpdate}) => {
+    const [id, setId] = useState('')
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [imageURL, setImageURL] = useState('')
+    
+    const [error, setError] = useState(false)
+
+    useEffect(() => {
+        // Fetch post data from database.
+        const fetchPost = async () => {
+            const {data} = await supabase.from('Posts').select().eq('id', id).maybeSingle()
+
+            // TODO: Populate the form with the existing post data.
+            setTitle(data.title)
+            setContent(data.content)
+            setImageURL(data.imageURL)
+        }
+        
+        if (isUpdate) {
+            fetchPost()
+        }
+    }, [])
+    
 
     const handleTextChange = (e) => {
         const id = e.target.id
@@ -39,12 +55,9 @@ const CreatePost = () => {
 
         if (!isUpdate) {
             // Add new post data to database. Redirect to gallery page after.
-            const {data, error} = await supabase.from('Posts').insert({title: title, content: content, imageURL: imageURL}).select()
+            const {_, error} = await supabase.from('Posts').insert({title: title, content: content, imageURL: imageURL}).select()
             if (error) {
                 console.error("Error adding post: ", error)
-            }
-            else {
-                setId(data[0].id)
             }
             window.location = "/gallery"
         }

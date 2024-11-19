@@ -52,11 +52,10 @@ const PostPage = () => {
         }
     }
 
-    // TODO:
-    // const editPost = async () => {
-    //     // Redirect to the edit post page.
-    //     window.location.href = `/edit/${id}`
-    // }
+    const editPost = () => {
+        // Redirect to the edit post page.
+        window.location.href = `/edit/${id}`
+    }
         
     return (
         <div className="postPageContainer">
@@ -72,7 +71,7 @@ const PostPage = () => {
                     <p>{post.upvotes}</p>
                 </div>
                 <div className="crud">
-                    <img src={edit} alt="Like" height="30px" width="30px"/>
+                    <img src={edit} alt="Like" height="30px" width="30px" onClick={editPost}/>
                     <img src={remove} alt="Like" height="30px" width="30px" onClick={deletePost}/>
                 </div>
             </div>
