@@ -6,7 +6,7 @@ const PostCard = ({title, timestamp, upvotes}) => {
         <div className="postCardContainer">
             <h1>{title}</h1>
             <p>Posted on {timestamp}</p>
-            <p>{upvotes} upvotes!</p>
+            <p>{upvotes} upvote{upvotes !== 1 && 's'}!</p>
         </div>
     )
 }
