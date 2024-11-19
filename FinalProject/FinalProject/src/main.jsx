@@ -5,6 +5,7 @@ import Layout from './Layout.jsx'
 import Home from './Home.jsx'
 import Gallery from './Gallery.jsx'
 import CreatePost from './CreatePost.jsx'
+import PostPage from './PostPage.jsx'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')).render(
           <Route index={true} path="/" element={<Home/>} />
           <Route index={false} path="/gallery" element={<Gallery/>} />
           <Route index={false} path="/create" element={<CreatePost/>} />
+          <Route index={false} path="/post/:id" element={<PostPage/>} />
         </Route>
       </Routes>
     </BrowserRouter>

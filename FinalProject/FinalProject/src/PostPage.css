@@ -1,0 +1,34 @@
+.postPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 100px;
+    padding: 50px;
+
+    border: 2px solid var(--dark-brown);
+    border-radius: 10px;
+    background-color: var(--lighter-brown);
+    color: var(--dark-brown);
+
+    & h1 {
+        font-size: var(--font-size-larger);
+        margin: 24px;
+    }
+
+    & h2 {
+        font-size: var(--font-size-medium);
+        margin: 24px;
+    }
+
+    & p {
+        font-size: var(--font-size-smaller);
+    }
+}
+
+#upvotes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    font-size: var(--font-size-smaller);
+}

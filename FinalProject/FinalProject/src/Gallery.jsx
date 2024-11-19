@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link }from 'react-router-dom'
 import { supabase } from './client.js'
 import PostCard from './PostCard'
 import './Gallery.css'
@@ -32,7 +33,9 @@ const Gallery = () => {
                       });
                     
                     return(
-                        <PostCard title={post.title} timestamp={timestamp} upvotes={post.upvotes}/>
+                        <Link to={`/post/${post.id}`} key={post.id}>
+                            <PostCard title={post.title} timestamp={timestamp} upvotes={post.upvotes}/>
+                        </Link>
                     )
                 }
                 )}

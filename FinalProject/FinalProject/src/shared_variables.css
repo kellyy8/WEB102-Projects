@@ -4,9 +4,11 @@
     --medium-brown: #7d6f64;
     --dark-brown: #201f1f;
     
+    --font-size-smaller: 1rem;
     --font-size-small: 1.5rem;
     --font-size-medium: 2rem;
     --font-size-large: 2.5rem;
+    --font-size-larger: 3rem;
 
     --font-weight-light: 300;
     --font-weight-normal: 400;
