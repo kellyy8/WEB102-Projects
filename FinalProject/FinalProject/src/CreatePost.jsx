@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { supabase } from './client.js'
 import './CreatePost.css'
 
 const CreatePost = () => {
     const [isUpdate, setIsUpdate] = useState(false)  // TODO: Change to true if updating a post.
     const [error, setError] = useState(false)
 
+    const [id, setId] = useState('')                // TODO: Set the post ID if updating a post.
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [imageURL, setImageURL] = useState('')
@@ -26,7 +28,7 @@ const CreatePost = () => {
         }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
         // Title is a required field. Make sure it is not empty.
@@ -34,7 +36,30 @@ const CreatePost = () => {
             setError(true)
             return
         }
-        // TODO: Update database with new post data.
+
+        if (!isUpdate) {
+            // Add new post data to database. Redirect to gallery page after.
+            const {data, error} = await supabase.from('Posts').insert({title: title, content: content, imageURL: imageURL}).select()
+            if (error) {
+                console.error("Error adding post: ", error)
+            }
+            else {
+                setId(data[0].id)
+            }
+            window.location = "/gallery"
+        }
+        else {
+            // TODO: Test out the update functionality.
+            // Update post data in database. Redirect back to post page after.
+            const {data, error} = await supabase.from('Posts').update({title: title, content: content, imageURL: imageURL}).eq('id', id).select()
+            if (error) {
+                console.error("Error updating post: ", error)
+            }
+            else {
+                setId(data[0].id)
+            }
+            window.location = `/post/${id}`
+        }
     }
 
     return (
@@ -49,7 +74,6 @@ const CreatePost = () => {
                 <label htmlFor="content">Content</label>
                 <textarea id="content" value={content} onChange={handleTextChange}/>
 
-                {/** TODO: How to store the upload to database? External URL instead of upload? */}
                 <label htmlFor="imageURL">Image URL</label>
                 <input id="imageURL" type="text" value={imageURL} onChange={handleTextChange}/>
 
