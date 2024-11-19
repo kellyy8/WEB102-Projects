@@ -1,0 +1,22 @@
+.postCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    padding: 10px;
+    
+    border: 1px solid var(--dark-brown);
+    border-radius: 10px;
+    color: var(--dark-brown);
+
+    & h1{
+        font-size: var(--font-size-large);
+    }
+
+    & p{
+        font-size: var(--font-size-small);
+    }
+}
