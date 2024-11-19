@@ -1,20 +1,30 @@
+:root{
+    --light-brown: #958375;
+    --lighter-brown: #b8a99a;
+    --medium-brown: #7d6f64;
+    --dark-brown: #201f1f;
+}
+
 #navbar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     column-gap: 2rem;
+    height: 100px;
+    width: 100%;
+
+    background-color: var(--dark-brown);
 }
 
 .navLinks {
-    color: var(--dark--brown);
+    padding: 0 1rem;
+    color: var(--lighter-brown);
+    font-size: var(--font-size-smaller);
+    font-weight: var(--font-weight-bold);
 
-    /* TODO: Implement more user feedback. */
-    /* border: 1px solid var(--light--brown); */
-    /* border-radius: 5px; */
-    /* background-color: var(--light--brown); */
-
-    /* &:hover {
-        color: var(--light--brown);
-        background-color: var(--dark--brown);
-    } */
+    &:hover {
+        color: var(--lighter-brown);
+        border: 1px solid var(--lighter-brown);
+        border-radius: 0.25rem;
+    }
 }
