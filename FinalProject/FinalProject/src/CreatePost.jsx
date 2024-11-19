@@ -28,7 +28,7 @@ const CreatePost = () => {
     }
 
     return (
-        <div>
+        <div className="createPostWrapper">
             {isUpdate ? <h1>Update Post</h1> : <h1>Create Post</h1>}
 
             <form id="postForm">

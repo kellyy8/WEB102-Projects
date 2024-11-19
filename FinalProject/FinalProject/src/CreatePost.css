@@ -1,3 +1,7 @@
+.createPostWrapper {
+    margin: 5rem 10rem;
+}
+
 #postForm {
     display: flex;
     flex-direction: column;
