@@ -1,9 +1,8 @@
-.homeContainer {
-  height: 100vh;
+#root {
   width: 100vw;
-  padding: 2rem;
+  padding: 50px;
   text-align: center;
-  
+
   background-color: var(--light-brown);
   color: var(--dark-brown);
 }
