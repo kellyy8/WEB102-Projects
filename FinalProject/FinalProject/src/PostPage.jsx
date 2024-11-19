@@ -73,6 +73,18 @@ const PostPage = () => {
         fetchPost()
     }, [id])
 
+    useEffect(() => {
+        // Add comments to database. State variable post.comments is updated via lifting state up using CommentsSection.
+        const addComments = async () => {
+            const {_, error} = await supabase.from('Posts').update({comments: post.comments}).eq('id', id)
+            if (error) {
+                console.error("Error adding comments: ", error)
+            }
+        }
+
+        addComments()
+    }, [post.comments])
+
     const incrementUpvotes = async () => {
         // Update upvotes in database.
         const {_, error} = await supabase.from('Posts').update({upvotes: post.upvotes + 1}).eq('id', id)
@@ -121,10 +133,8 @@ const PostPage = () => {
                 </div>
             </div>
 
-            <div id="comments">
-                {/** Lift up state: comments children to post parent. */}
-                <CommentsSection comments={post.comments} post={post} setPost={setPost}/>
-            </div>
+            {/** Lift up state: comments children to post parent. */}
+            <CommentsSection comments={post.comments} post={post} setPost={setPost}/>
         </div>
     )
 }
