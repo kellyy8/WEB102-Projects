@@ -1,6 +1,7 @@
 import './App.css'
 import './shared_variables.css'
 import PostCard from './PostCard'
+import CreatePost from './CreatePost'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
 
       {/** TODO: Sample content to test components. Update later. */}
       <PostCard title="Title" timestamp="11:11PM" upvotes={1}/>
+      <CreatePost />
     </div>
   )
 }

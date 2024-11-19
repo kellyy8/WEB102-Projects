@@ -1,5 +1,5 @@
-import React from 'react';
-import './PostCard.css';
+import React from 'react'
+import './PostCard.css'
 
 const PostCard = ({title, timestamp, upvotes}) => {
     return (
@@ -11,4 +11,4 @@ const PostCard = ({title, timestamp, upvotes}) => {
     )
 }
 
-export default PostCard;
+export default PostCard

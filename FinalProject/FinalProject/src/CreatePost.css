@@ -1,0 +1,31 @@
+#postForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-brown);
+
+    & #title, #content, #imageURL {
+        width: 100%;
+        padding: 0.5rem;
+
+        font-size: var(--font-size-small);
+        color: var(--dark-brown);
+        background-color: var(--lighter-brown);
+        border: 2px solid var(--dark-brown);
+    }
+
+    & #submitPost {
+        text-align: center;
+        align-self: center;
+
+        font-weight: var(--font-weight-bold);
+        color: var(--dark-brown);
+        background-color: var(--medium-brown);
+        border-radius: 0.5rem;
+    }
+}

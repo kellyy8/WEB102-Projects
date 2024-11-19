@@ -1,8 +1,15 @@
 :root{
     --light-brown: #958375;
+    --lighter-brown: #b8a99a;
+    --medium-brown: #7d6f64;
     --dark-brown: #201f1f;
     
     --font-size-small: 1.5rem;
     --font-size-medium: 2rem;
     --font-size-large: 2.5rem;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    --font-weight-bolder: 900;
 }
