@@ -1,9 +1,9 @@
-import './App.css'
+import './Home.css'
 import './shared_variables.css'
 import CreatePost from './CreatePost'
 import Gallery from './Gallery'
 
-function App() {
+const Home = () => {
 
   return (
     <div>
@@ -16,4 +16,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
