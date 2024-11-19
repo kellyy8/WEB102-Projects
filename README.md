@@ -48,3 +48,13 @@ This web app extends Project 5 by allowing users to discover more information ab
 <img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project5%266/P6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
+
+# Project 7 - *Making Teams*
+
+This web app: **lets users make teams and track their teammates' favorite colors.**
+
+## Video Walkthrough
+
+<img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project7/P7.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [Kap](https://getkap.co/) for macOS.
