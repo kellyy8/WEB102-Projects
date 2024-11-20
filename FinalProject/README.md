@@ -2,7 +2,7 @@
 
 Submitted by: **Kelly Yu**
 
-This web app: **provides a place for users to share their favorite crafts!**
+This web app: **provides a place for everyone to share their favorite crafts!**
 
 Time spent: **12** hours spent in total
 
@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/kellyy8/WEB102-Projects/tree/main/FinalProject/FinalProject.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://drive.google.com/file/d/1hpZPGgyGF8pA7kxGq8vDk7GUGwtEPf33/view?usp=sharing' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
 
