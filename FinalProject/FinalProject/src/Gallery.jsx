@@ -5,18 +5,35 @@ import PostCard from './PostCard'
 import './Gallery.css'
 
 const Gallery = () => {
-    const [posts, setPosts] = useState([])
+    const [allPosts, setAllPosts] = useState([])            // Holds all posts from the database (i.e. unfiltered posts).
+    const [posts, setPosts] = useState([])                  // May be sorted or filtered. Used for displaying posts.
+
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
         // Fetch posts from database.
         const fetchPosts = async () => {
             const {data} = await supabase.from('Posts').select().order('created_at', {ascending: true})
+            setAllPosts(data)
             setPosts(data)
         }
 
         fetchPosts()
 
     }, [])
+
+    const handleSearchByTitle = () => {
+        if(search === ''){
+            setPosts(allPosts)
+        }
+        else{
+            // Always search through all posts, not just the current posts.
+            const filteredPosts = allPosts.filter((post) => {
+                return post.title.toLowerCase().includes(search.toLowerCase())
+            })
+            setPosts(filteredPosts)
+        }
+    }
 
     const handleSortByNewest = () => {
         const sortedPosts = [...posts].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
@@ -37,6 +54,17 @@ const Gallery = () => {
     return(
         <div>
             <h1>Gallery</h1>
+
+            <div className="searchBar">
+                <input
+                    type="text"
+                    value={search}
+                    placeholder="Search for posts..."
+                    onChange={(e)=>{setSearch(e.target.value)}}
+                    alt="The search words in the search bar."
+                />
+                <button onClick={handleSearchByTitle}>Search</button>
+            </div>
 
             <div className="filters">
                 <p> Order by: </p>
