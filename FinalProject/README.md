@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://drive.google.com/file/d/1hpZPGgyGF8pA7kxGq8vDk7GUGwtEPf33/view?usp=sharing' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<a href="https://drive.google.com/file/d/1hpZPGgyGF8pA7kxGq8vDk7GUGwtEPf33/view?usp=sharing">Link to Video Walkthough!</a>
 
 GIF created with [Kap](https://getkap.co/) for macOS.
 
