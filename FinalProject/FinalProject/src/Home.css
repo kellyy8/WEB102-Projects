@@ -8,3 +8,11 @@
   background-color: var(--light-brown);
   color: var(--dark-brown);
 }
+
+.description {
+  margin: 1rem 0;
+  
+  color: var(--dark-brown);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+}
