@@ -13,13 +13,6 @@
     color: var(--dark-brown);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bolder);
-
-    & button {
-        background-color: var(--dark-brown);
-        color: var(--lighter-brown);
-        font-size: var(--font-size-smaller);
-        font-weight: var(--font-weight-bolder);
-    }
 }
 
 .searchBar {
@@ -42,22 +35,22 @@
             outline-color: var(--light-brown);
         }
     }
-
-    & button {
-        padding: 0.5rem;
-
-        border-radius: 0.5rem;
-        border: 2px solid var(--dark-brown);
-
-        font-size: var(--font-size-smaller);
-        font-weight: var(--font-weight-bolder);
-        background-color: var(--dark-brown);
-        color: var(--lighter-brown);
-        
-        &:hover {
-            box-shadow: none;
-            background-color: var(--medium-brown);
-            color: var(--dark-brown);
-        }
-    }
 }
+
+:is(.filters, .searchBar) button {
+    cursor: pointer;
+    padding: 0.5rem;
+  
+    border-radius: 0.5rem;
+    border: 2px solid var(--dark-brown);
+  
+    background-color: var(--dark-brown);
+    color: var(--lighter-brown);
+    font-size: var(--font-size-smaller);
+    font-weight: var(--font-weight-bolder);
+    
+    &:hover {
+        background-color: var(--medium-brown);
+        color: var(--dark-brown);
+    }
+  }

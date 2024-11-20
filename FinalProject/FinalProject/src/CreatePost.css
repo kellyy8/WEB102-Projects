@@ -24,18 +24,22 @@
     }
 
     & #submitPost {
+        cursor: pointer;
+
+        padding: 0.6em 1.2em;
         text-align: center;
         align-self: center;
-
-        font-weight: var(--font-weight-bold);
-        color: var(--dark-brown);
-        background-color: var(--medium-brown);
+        
         border: 2px solid var(--dark-brown);
         border-radius: 0.5rem;
-
+        font-weight: var(--font-weight-bold);
+        font-size: 1em;
+        color: var(--lighter-brown);
+        background-color: var(--dark-brown);
+        
         &:hover {
-            background-color: var(--dark-brown);
-            color: var(--lighter-brown);
+            color: var(--dark-brown);
+            background-color: var(--medium-brown);
         }
     }
 }
