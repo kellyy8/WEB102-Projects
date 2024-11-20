@@ -58,3 +58,13 @@ This web app: **lets users make teams and track their teammates' favorite colors
 <img src='https://github.com/kellyy8/WEB102-Projects/blob/main/Project7/P7.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS.
+
+# Final Project - *Crafty Cats*
+
+This web app: **provides a place for everyone to share their favorite crafts!**
+
+## Video Walkthrough
+
+<img src='https://drive.google.com/file/d/1hpZPGgyGF8pA7kxGq8vDk7GUGwtEPf33/view?usp=sharing' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
+
+GIF created with [Kap](https://getkap.co/) for macOS.
